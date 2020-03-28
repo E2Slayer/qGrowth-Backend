@@ -1,0 +1,75 @@
+GET http://localhost:3600/users
+
+###
+GET http://localhost:3600/users/5e7e7e8011067040a0d2c702
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTdlOTNlYTExMDY3MDQwYTBkMmM3MDgiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInBlcm1pc3Npb25MZXZlbCI6MSwicHJvdmlkZXIiOiJlbWFpbCIsIm5hbWUiOiJGaXJzdDIzMzMzIExhc3QyIiwicmVmcmVzaEtleSI6IndwWDU1bFBGK1AwUlJyVjBsZDlOanc9PSIsImlhdCI6MTU4NTM1NjQ5M30.pS1vNMhnSibNEg1Zn25I7dLtVPx2ehDMJ0ptm7eK1Rc
+
+###
+
+GET https://dropent-backend.herokuapp.com/users/
+
+###
+POST https://dropent-backend.herokuapp.com/users
+Content-Type: application/json
+
+{
+    "firstName": "First233",
+    "lastName": "Last233",
+    "email": "email@ndke.com",
+    "password": "dasdsad333"
+}
+
+
+
+###
+
+POST http://localhost:3600/auth
+Content-Type: application/json
+
+{
+    "email": "admin@admin.com",
+    "password": "admin"
+}
+
+
+###
+
+POST http://localhost:3600/users
+Content-Type: application/json
+
+{
+    "firstName": "First23333",
+    "lastName": "Last2",
+    "email": "admin@admin.com",
+    "password": "admin",
+    "permissionLevel": 2024
+}
+
+
+###
+POST http://localhost:3600/users
+Content-Type: application/json
+
+{
+    "firstName": "First23333",
+    "lastName": "Last2",
+    "email": "email@ndk444e.com",
+    "password": "dasdsad333",
+    "permissionLevel": 1
+}
+
+###
+
+DELETE http://localhost:3000/users/5e7d60fdee6453212d21e81b
+
+###
+
+PATCH http://localhost:3000/users/5e7d60fdee6453212d21e81b
+Content-Type: application/json
+
+{
+    "firstName": "First233",
+    "lastName": "Last233",
+    "email": "email33@ndke.com",
+    "password": "dasdsad333"
+}
