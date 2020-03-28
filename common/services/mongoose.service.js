@@ -1,4 +1,8 @@
 const mongoose = require('mongoose');
+
+
+//require('dotenv').config()
+
 let count = 0;
 
 const options = {
@@ -14,9 +18,9 @@ const options = {
     
 };
 
-const uri =  process.env.MONGODB_URI
+//const uri =  process.env.MONGODB_URI
 
-//const uri =  'mongodb://localhost:27017/dropentbackend'
+const uri =  'mongodb://localhost:27017/dropentbackend'
 
 
 const connectWithRetry = () => {

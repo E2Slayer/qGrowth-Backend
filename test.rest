@@ -8,6 +8,24 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTdlO
 
 GET https://dropent-backend.herokuapp.com/users/
 
+//ObjectId("5e7ea2add6db6f57efd5a1bf")
+
+    //name: String,
+    //owner: { type: Schema.ObjectId, ref: "Users", required: true },
+    //ownedTrees: [{ type: Schema.ObjectId, ref: "Trees" }],
+   // points: Number
+//
+
+###
+POST http://localhost:3600/gardens
+Content-Type: application/json
+
+{
+    "name": "yayFirstGarden",
+    "owner": "5e7ea2add6db6f57efd5a1bf",
+    "points": 3000
+}
+
 ###
 POST https://dropent-backend.herokuapp.com/users
 Content-Type: application/json
