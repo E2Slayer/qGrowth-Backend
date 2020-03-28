@@ -23,17 +23,17 @@ exports.routesConfig = function (app) {
        GardenController.getById
     ]);
 
-    /*
-    app.patch('/gardens/:userId', [
-        ValidationMiddleware.validJWTNeeded,
-        PermissionMiddleware.minimumPermissionLevelRequired(FREE),
-        PermissionMiddleware.onlySameUserOrAdminCanDoThisAction,
-        UsersController.patchById
+    
+    app.patch('/gardens/:Id', [
+       // ValidationMiddleware.validJWTNeeded,
+       // PermissionMiddleware.minimumPermissionLevelRequired(FREE),
+      //  PermissionMiddleware.onlySameUserOrAdminCanDoThisAction,
+      GardenController.patchById
     ]);
-    app.delete('/gardens/:userId', [
-        ValidationMiddleware.validJWTNeeded,
-        PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
-        UsersController.removeById
+    app.delete('/gardens/:Id', [
+      //  ValidationMiddleware.validJWTNeeded,
+       // PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
+       GardenController.removeById
     ]);
-    */
+    
 };

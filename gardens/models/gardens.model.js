@@ -60,10 +60,10 @@ exports.list = (perPage, page) => {
 };
 
 
-/*
-exports.patchUser = (id, userData) => {
+
+exports.patchGarden = (id, userData) => {
     return new Promise((resolve, reject) => {
-        User.findById(id, function (err, user) {
+        Garden.findById(id, function (err, user) {
             if (err) reject(err);
             for (let i in userData) {
                 user[i] = userData[i];
@@ -77,9 +77,9 @@ exports.patchUser = (id, userData) => {
 
 };
 
-exports.removeById = (userId) => {
+exports.removeById = (Id) => {
     return new Promise((resolve, reject) => {
-        User.remove({_id: userId}, (err) => {
+        Garden.remove({_id: Id}, (err) => {
             if (err) {
                 reject(err);
             } else {
@@ -89,4 +89,3 @@ exports.removeById = (userId) => {
     });
 };
 
-*/

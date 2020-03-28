@@ -66,42 +66,23 @@ Content-Type: application/json
 
 
 
-###
-
-POST http://localhost:3600/auth
-Content-Type: application/json
-
-{
-    "email": "admin@admin.com",
-    "password": "admin"
-}
-
 
 ###
 
-POST http://localhost:3600/users
-Content-Type: application/json
-
-{
-    "firstName": "First23333",
-    "lastName": "Last2",
-    "email": "admin@admin.com",
-    "password": "admin",
-    "permissionLevel": 2024
-}
-
+DELETE http://localhost:3600/gardens/5e7fb1c9b55e0949fbd5565a
 
 ###
-POST http://localhost:3600/users
+
+PATCH http://localhost:3600/gardens/5e7fb1c9b55e0949fbd5565a
 Content-Type: application/json
 
 {
-    "firstName": "First23333",
-    "lastName": "Last2",
-    "email": "email@ndk444e.com",
-    "password": "dasdsad333",
-    "permissionLevel": 1
+    "name": "changedName",
+    "owner": "5e7f94378b626e31cd287aad",
+    "ownedTrees": ["5e7f94378b626e31cd287aad","5e7f94378b626e31cd287aad"],
+    "points": 1000
 }
+
 
 ###
 

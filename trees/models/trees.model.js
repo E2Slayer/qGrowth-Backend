@@ -58,8 +58,8 @@ exports.list = (perPage, page) => {
 };
 
 
-/*
-exports.patchUser = (id, userData) => {
+
+exports.patchTree = (id, userData) => {
     return new Promise((resolve, reject) => {
         User.findById(id, function (err, user) {
             if (err) reject(err);
@@ -87,4 +87,3 @@ exports.removeById = (userId) => {
     });
 };
 
-*/

@@ -23,17 +23,17 @@ exports.routesConfig = function (app) {
        TreeController.getById
     ]);
 
-    /*
-    app.patch('/trees/:userId', [
-        ValidationMiddleware.validJWTNeeded,
-        PermissionMiddleware.minimumPermissionLevelRequired(FREE),
-        PermissionMiddleware.onlySameUserOrAdminCanDoThisAction,
-        UsersController.patchById
+    
+    app.patch('/trees/:Id', [
+       // ValidationMiddleware.validJWTNeeded,
+       // PermissionMiddleware.minimumPermissionLevelRequired(FREE),
+       // PermissionMiddleware.onlySameUserOrAdminCanDoThisAction,
+       TreeController.patchById
     ]);
-    app.delete('/trees/:userId', [
-        ValidationMiddleware.validJWTNeeded,
-        PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
-        UsersController.removeById
+    app.delete('/trees/:Id', [
+       // ValidationMiddleware.validJWTNeeded,
+       // PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
+       TreeController.removeById
     ]);
-    */
+    
 };

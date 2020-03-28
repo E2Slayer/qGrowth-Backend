@@ -31,21 +31,16 @@ exports.list = (req, res) => {
 };
 
 exports.getById = (req, res) => {
-    GardenModel.findById(req.params.userId)
+    GardenModel.findById(req.params.Id)
         .then((result) => {
             res.status(200).send(result);
         });
 };
 
-/*
-exports.patchById = (req, res) => {
-    if (req.body.password) {
-        let salt = crypto.randomBytes(16).toString('base64');
-        let hash = crypto.createHmac('sha512', salt).update(req.body.password).digest("base64");
-        req.body.password = salt + "$" + hash;
-    }
 
-    GardenModel.patchUser(req.params.userId, req.body)
+exports.patchById = (req, res) => {
+
+    GardenModel.patchGarden(req.params.Id, req.body)
         .then((result) => {
             res.status(204).send({});
         });
@@ -53,9 +48,8 @@ exports.patchById = (req, res) => {
 };
 
 exports.removeById = (req, res) => {
-    GardenModel.removeById(req.params.userId)
+    GardenModel.removeById(req.params.Id)
         .then((result)=>{
             res.status(204).send({});
         });
 };
-*/
