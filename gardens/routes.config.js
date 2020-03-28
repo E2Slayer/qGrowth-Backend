@@ -9,6 +9,7 @@ const FREE = config.permissionLevels.NORMAL_USER;
 
 exports.routesConfig = function (app) {
     app.post('/gardens', [
+
         GardenController.insert
     ]);
     app.get('/gardens', [

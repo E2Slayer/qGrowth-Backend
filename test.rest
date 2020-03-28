@@ -27,7 +27,7 @@ Content-Type: application/json
 {
     "name": "12312321",
     "owner": "5e7f94378b626e31cd287aad",
-    "ownedTrees": ["ddd","test"],
+    "ownedTrees": ["5e7f94378b626e31cd287aad","5e7f94378b626e31cd287aad"],
     "points": 5000
 }
 
@@ -73,14 +73,11 @@ DELETE http://localhost:3600/gardens/5e7fb1c9b55e0949fbd5565a
 
 ###
 
-PATCH http://localhost:3600/gardens/5e7fb1c9b55e0949fbd5565a
+PATCH http://localhost:3600/gardens/5e7fbab333b07151fb20659e
 Content-Type: application/json
 
 {
-    "name": "changedName",
-    "owner": "5e7f94378b626e31cd287aad",
-    "ownedTrees": ["5e7f94378b626e31cd287aad","5e7f94378b626e31cd287aad"],
-    "points": 1000
+    "ownedTrees": ["5e7f94378b626e31cd287aad","5e7f94378b626e31cd287aad","5e7f94378b626e31cd287aa3"]
 }
 
 

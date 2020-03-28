@@ -1,6 +1,8 @@
 const mongoose = require('../../common/services/mongoose.service').mongoose;
 const Schema = mongoose.Schema;
 
+
+
 const gardenSchema = new Schema({
     name: String,
     owner: { type: Schema.Types.ObjectId, ref: 'Users', required: true },
@@ -24,6 +26,7 @@ gardenSchema.findById = function (cb) {
 };
 
 const Garden = mongoose.model('Gardens', gardenSchema);
+
 
 
 exports.findByName = (name) => {
@@ -76,6 +79,8 @@ exports.patchGarden = (id, userData) => {
     })
 
 };
+
+
 
 exports.removeById = (Id) => {
     return new Promise((resolve, reject) => {
