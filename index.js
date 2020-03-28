@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const AuthorizationRouter = require('./authorization/routes.config');
 const UsersRouter = require('./users/routes.config');
 const GardenRouter = require('./gardens/routes.config');
+const TreeRouter = require('./trees/routes.config');
 
 
 
@@ -29,6 +30,8 @@ app.use(bodyParser.json());
 AuthorizationRouter.routesConfig(app);
 UsersRouter.routesConfig(app);
 GardenRouter.routesConfig(app);
+TreeRouter.routesConfig(app);
+
 
 app.listen(config.port, function () {
     console.log('app listening at port %s', config.port);

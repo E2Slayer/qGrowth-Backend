@@ -17,14 +17,40 @@ GET https://dropent-backend.herokuapp.com/users/
 //
 
 ###
+GET http://localhost:3600/gardens
+
+###
+
 POST http://localhost:3600/gardens
 Content-Type: application/json
 
 {
-    "name": "yayFirstGarden",
-    "owner": "5e7ea2add6db6f57efd5a1bf",
-    "points": 3000
+    "name": "12312321",
+    "owner": "5e7f94378b626e31cd287aad",
+    "ownedTrees": ["ddd","test"],
+    "points": 5000
 }
+
+
+//    name: String,
+//    type: Number,
+//   level: Number,
+//   points: Number
+###
+POST http://localhost:3600/trees
+Content-Type: application/json
+
+{
+    "name": "treeName",
+    "type": 123,
+    "level": 4000,
+    "points": 303
+}
+
+###
+
+GET http://localhost:3600/trees
+
 
 ###
 POST https://dropent-backend.herokuapp.com/users
@@ -36,6 +62,7 @@ Content-Type: application/json
     "email": "email@ndke.com",
     "password": "dasdsad333"
 }
+
 
 
 

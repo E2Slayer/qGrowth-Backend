@@ -1,4 +1,4 @@
-const GardenController = require('./controllers/gardens.controller');
+const TreeController = require('./controllers/trees.controller');
 const PermissionMiddleware = require('../common/middlewares/auth.permission.middleware');
 const ValidationMiddleware = require('../common/middlewares/auth.validation.middleware');
 const config = require('../common/config/env.config');
@@ -8,29 +8,29 @@ const PAID = config.permissionLevels.PAID_USER;
 const FREE = config.permissionLevels.NORMAL_USER;
 
 exports.routesConfig = function (app) {
-    app.post('/gardens', [
-        GardenController.insert
+    app.post('/trees', [
+        TreeController.insert
     ]);
-    app.get('/gardens', [
+    app.get('/trees', [
        // ValidationMiddleware.validJWTNeeded,
        // PermissionMiddleware.minimumPermissionLevelRequired(FREE),
-       GardenController.list
+       TreeController.list
     ]);
-    app.get('/gardens/:Id', [
+    app.get('/trees/:Id', [
        // ValidationMiddleware.validJWTNeeded,
        // PermissionMiddleware.minimumPermissionLevelRequired(FREE),
        // PermissionMiddleware.onlySameUserOrAdminCanDoThisAction,
-       GardenController.getById
+       TreeController.getById
     ]);
 
     /*
-    app.patch('/gardens/:userId', [
+    app.patch('/trees/:userId', [
         ValidationMiddleware.validJWTNeeded,
         PermissionMiddleware.minimumPermissionLevelRequired(FREE),
         PermissionMiddleware.onlySameUserOrAdminCanDoThisAction,
         UsersController.patchById
     ]);
-    app.delete('/gardens/:userId', [
+    app.delete('/trees/:userId', [
         ValidationMiddleware.validJWTNeeded,
         PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
         UsersController.removeById

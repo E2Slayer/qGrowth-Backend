@@ -20,7 +20,8 @@ const options = {
 
 //const uri =  process.env.MONGODB_URI
 
-const uri =  'mongodb://localhost:27017/dropentbackend'
+//const uri =  'mongodb://localhost:27017/dropentbackend'
+const uri =  'mongodb+srv://admin:skek1004@cluster0-lqg9x.gcp.mongodb.net/test?retryWrites=true&w=majority'
 
 
 const connectWithRetry = () => {
@@ -34,5 +35,9 @@ const connectWithRetry = () => {
 };
 
 connectWithRetry();
+
+
+
+
 
 exports.mongoose = mongoose;

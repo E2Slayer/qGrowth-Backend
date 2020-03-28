@@ -1,4 +1,4 @@
-const GardenModel = require('../models/gardens.model');
+const TreeModel = require('../models/trees.model');
 const crypto = require('crypto');
 
 exports.insert = (req, res) => {
@@ -9,7 +9,7 @@ exports.insert = (req, res) => {
     req.body.permissionLevel = 1;
     */
 
-    GardenModel.createGarden(req.body)
+    TreeModel.createTree(req.body)
         .then((result) => {
             res.status(201).send({id: result._id});
         });
@@ -24,14 +24,14 @@ exports.list = (req, res) => {
             page = Number.isInteger(req.query.page) ? req.query.page : 0;
         }
     }
-    GardenModel.list(limit, page)
+    TreeModel.list(limit, page)
         .then((result) => {
             res.status(200).send(result);
         })
 };
 
 exports.getById = (req, res) => {
-    GardenModel.findById(req.params.userId)
+    TreeModel.findById(req.params.userId)
         .then((result) => {
             res.status(200).send(result);
         });
@@ -45,7 +45,7 @@ exports.patchById = (req, res) => {
         req.body.password = salt + "$" + hash;
     }
 
-    GardenModel.patchUser(req.params.userId, req.body)
+    TreeModel.patchUser(req.params.userId, req.body)
         .then((result) => {
             res.status(204).send({});
         });
@@ -53,7 +53,7 @@ exports.patchById = (req, res) => {
 };
 
 exports.removeById = (req, res) => {
-    GardenModel.removeById(req.params.userId)
+    TreeModel.removeById(req.params.userId)
         .then((result)=>{
             res.status(204).send({});
         });

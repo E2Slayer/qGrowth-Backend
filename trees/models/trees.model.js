@@ -1,36 +1,34 @@
 const mongoose = require('../../common/services/mongoose.service').mongoose;
 const Schema = mongoose.Schema;
 
-const gardenSchema = new Schema({
+const treeSchema = new Schema({
     name: String,
-    owner: { type: Schema.Types.ObjectId, ref: 'Users', required: true },
-    ownedTrees: [{ type:Schema.Types.ObjectId, ref:'Trees'}],
-    //{ type: Schema.Types.ObjectId, ref: 'Trees' }
+    type: Number,
+    level: Number,
     points: Number
 });
 
-
-gardenSchema.virtual('id').get(function () {
+treeSchema.virtual('id').get(function () {
     return this._id.toHexString();
 });
 
 // Ensure virtual fields are serialised.
-gardenSchema.set('toJSON', {
+treeSchema.set('toJSON', {
     virtuals: true
 });
 
-gardenSchema.findById = function (cb) {
-    return this.model('Gardens').find({id: this.id}, cb);
+treeSchema.findById = function (cb) {
+    return this.model('Tree').find({id: this.id}, cb);
 };
 
-const Garden = mongoose.model('Gardens', gardenSchema);
+const Tree = mongoose.model('Trees', treeSchema);
 
 
 exports.findByName = (name) => {
-    return Garden.find({name: name});
+    return Tree.find({name: name});
 };
 exports.findById = (id) => {
-    return Garden.findById(id)
+    return Tree.findById(id)
         .then((result) => {
             result = result.toJSON();
             delete result._id;
@@ -39,21 +37,21 @@ exports.findById = (id) => {
         });
 };
 
-exports.createGarden = (gardenData) => {
-    const garden = new Garden(gardenData);
-    return garden.save();
+exports.createTree = (treeData) => {
+    const tree = new Tree(treeData);
+    return tree.save();
 };
 
 exports.list = (perPage, page) => {
     return new Promise((resolve, reject) => {
-        Garden.find()
+        Tree.find()
             .limit(perPage)
             .skip(perPage * page)
-            .exec(function (err, gardens) {
+            .exec(function (err, trees) {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve(gardens);
+                    resolve(trees);
                 }
             })
     });
