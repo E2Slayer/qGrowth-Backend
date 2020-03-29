@@ -7,7 +7,6 @@ const gardenSchema = new Schema({
     name: String,
     owner: { type: Schema.Types.ObjectId, ref: 'Users', required: true },
     ownedTrees: [{ type:Schema.Types.ObjectId, ref:'Trees'}],
-    //{ type: Schema.Types.ObjectId, ref: 'Trees' }
     points: Number
 });
 

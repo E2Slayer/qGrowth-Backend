@@ -25,10 +25,10 @@ POST http://localhost:3600/gardens
 Content-Type: application/json
 
 {
-    "name": "12312321",
-    "owner": "5e7f94378b626e31cd287aad",
-    "ownedTrees": ["5e7f94378b626e31cd287aad","5e7f94378b626e31cd287aad"],
-    "points": 5000
+    "name": "Admin Garden",
+    "owner": "5e7fe4319e36c9001788075b",
+    "ownedTrees": ["5e7fa803187384425bfec3b5","5e7fa803187384425bfec3b6", "5e7fa803187384425bfec3b5"],
+    "points": 1234
 }
 
 
@@ -41,10 +41,12 @@ POST http://localhost:3600/trees
 Content-Type: application/json
 
 {
-    "name": "treeName",
-    "type": 123,
-    "level": 4000,
-    "points": 303
+    "name": "Fourth",
+    "type": 4,
+    "level": 12,
+    "points": 299,
+    "x": 10,
+    "y": 5
 }
 
 ###

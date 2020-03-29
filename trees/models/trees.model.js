@@ -5,7 +5,10 @@ const treeSchema = new Schema({
     name: String,
     type: Number,
     level: Number,
-    points: Number
+    points: Number,
+    x: Number,
+    y: Number
+
 });
 
 treeSchema.virtual('id').get(function () {
