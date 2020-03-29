@@ -36,7 +36,7 @@ mongodb://localhost/
 ```
 For MongoDB Atlas, it looks like 
 ```
-mongodb+srv://<username>:<passowrd@<server>.gcp.mongodb.net/test?retryWrites=true&w=majority'
+mongodb+srv://<username>:<passowrd>@<server>.gcp.mongodb.net/test?retryWrites=true&w=majority'
 ```
 
 ### Now, start the server
