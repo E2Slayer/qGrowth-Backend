@@ -51,7 +51,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3600/trees
+GET https://qgrowth-backend.herokuapp.com/trees
 
 
 ###
@@ -85,7 +85,17 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/users/5e7d60fdee6453212d21e81b
+DELETE https://qgrowth-backend.herokuapp.com/trees/5e8123420b4f4d4dcea3a285
+
+###
+
+
+DELETE http://localhost:3600/trees/5e8123c9e5f33200178e0562
+
+###
+
+
+DELETE http://localhost:3600/trees
 
 ###
 

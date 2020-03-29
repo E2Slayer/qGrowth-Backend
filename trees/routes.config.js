@@ -35,5 +35,11 @@ exports.routesConfig = function (app) {
        // PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
        TreeController.removeById
     ]);
+
+    app.delete('/trees', [
+      // ValidationMiddleware.validJWTNeeded,
+      // PermissionMiddleware.minimumPermissionLevelRequired(ADMIN),
+      TreeController.removeAll
+   ]);
     
 };

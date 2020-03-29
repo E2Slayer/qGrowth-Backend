@@ -31,7 +31,7 @@ exports.list = (req, res) => {
 };
 
 exports.getById = (req, res) => {
-    TreeModel.findById(req.params.userId)
+    TreeModel.findById(req.params.Id)
         .then((result) => {
             res.status(200).send(result);
         });
@@ -40,7 +40,7 @@ exports.getById = (req, res) => {
 
 exports.patchById = (req, res) => {
 
-    TreeModel.patchTree(req.params.userId, req.body)
+    TreeModel.patchTree(req.params.Id, req.body)
         .then((result) => {
             res.status(204).send({});
         });
@@ -48,7 +48,14 @@ exports.patchById = (req, res) => {
 };
 
 exports.removeById = (req, res) => {
-    TreeModel.removeById(req.params.userId)
+    TreeModel.removeById(req.params.Id)
+        .then((result)=>{
+            res.status(204).send({});
+        });
+};
+
+exports.removeAll = (req, res) => {
+    TreeModel.removeAll()
         .then((result)=>{
             res.status(204).send({});
         });

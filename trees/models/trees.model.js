@@ -64,7 +64,7 @@ exports.list = (perPage, page) => {
 
 exports.patchTree = (id, userData) => {
     return new Promise((resolve, reject) => {
-        User.findById(id, function (err, user) {
+        Tree.findById(id, function (err, user) {
             if (err) reject(err);
             for (let i in userData) {
                 user[i] = userData[i];
@@ -78,9 +78,21 @@ exports.patchTree = (id, userData) => {
 
 };
 
-exports.removeById = (userId) => {
+exports.removeById = (Id) => {
     return new Promise((resolve, reject) => {
-        User.remove({_id: userId}, (err) => {
+        Tree.remove({_id: Id}, (err) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(err);
+            }
+        });
+    });
+};
+
+exports.removeAll = () => {
+    return new Promise((resolve, reject) => {
+        Tree.remove({}, (err) => {
             if (err) {
                 reject(err);
             } else {
